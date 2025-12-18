@@ -10,9 +10,9 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 // ================== ENV ==================
-const CHAPORT_TOKEN = process.env.CHAPORT_TOKEN;
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const EGqQElPUyA2pCyoWLIoXYRcLUsjdMel4BGQ3qe4IHdeau93RqdlBDGzTl5v7u2XBXxsoaXWrQP970AjuKnBOJuB2qm4zoYgrcG3L5eReTTP8aBrO8rh1OavHWpMB0elN7PTIiL7u51PxxD6uIV4rslgtQvMdbEeZxhvqSM9phzshWSifPGT6eBxUEBexXZum3n0a2G6QtQ5qjS4xGKByrHAJRchIX7lFjkqN6MNVk9R7y2NkEhlBrkFDNW9kWbLr = process.env.EGqQElPUyA2pCyoWLIoXYRcLUsjdMel4BGQ3qe4IHdeau93RqdlBDGzTl5v7u2XBXxsoaXWrQP970AjuKnBOJuB2qm4zoYgrcG3L5eReTTP8aBrO8rh1OavHWpMB0elN7PTIiL7u51PxxD6uIV4rslgtQvMdbEeZxhvqSM9phzshWSifPGT6eBxUEBexXZum3n0a2G6QtQ5qjS4xGKByrHAJRchIX7lFjkqN6MNVk9R7y2NkEhlBrkFDNW9kWbLr;
+const 8254210520:AAEmP_hKQN1qLkKkHSig9j3l5b8qT9OF9sc = process.env.8254210520:AAEmP_hKQN1qLkKkHSig9j3l5b8qT9OF9sc;
+const @chaportai_bot = process.env.@chaportai_bot;
 const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
 // ================== KEYWORDS ==================
@@ -31,13 +31,13 @@ function hasKeyword(text, keywords) {
 
 // ================== TELEGRAM ==================
 async function sendTelegram(text) {
-  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
+  if (!8254210520:AAEmP_hKQN1qLkKkHSig9j3l5b8qT9OF9sc || !@chaportai_bot) return;
 
-  await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+  await fetch(`https://api.telegram.org/bot${8254210520:AAEmP_hKQN1qLkKkHSig9j3l5b8qT9OF9sc}/sendMessage`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      chat_id: TELEGRAM_CHAT_ID,
+      chat_id: @chaportai_bot,
       text
     })
   });
@@ -48,7 +48,7 @@ async function sendChaportMessage(visitorId, chatId, text) {
   await fetch("https://app.chaport.com/api/v1/messages", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${CHAPORT_TOKEN}`,
+      "Authorization": `Bearer ${EGqQElPUyA2pCyoWLIoXYRcLUsjdMel4BGQ3qe4IHdeau93RqdlBDGzTl5v7u2XBXxsoaXWrQP970AjuKnBOJuB2qm4zoYgrcG3L5eReTTP8aBrO8rh1OavHWpMB0elN7PTIiL7u51PxxD6uIV4rslgtQvMdbEeZxhvqSM9phzshWSifPGT6eBxUEBexXZum3n0a2G6QtQ5qjS4xGKByrHAJRchIX7lFjkqN6MNVk9R7y2NkEhlBrkFDNW9kWbLr}`,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
